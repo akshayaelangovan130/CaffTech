@@ -2,3 +2,5 @@ cafftech
 main
 *.dSYM/
 .vscode/
+*.exe
+
