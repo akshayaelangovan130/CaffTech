@@ -18,6 +18,7 @@ void displayMenu();
 void displayMethods(struct BrewingMethod methods[], int size);
 void generateRecipe(struct BrewingMethod methods[], int size);
 void coffeeCalculator();
+void adjustTaste();
 
 int main()
 {
@@ -47,30 +48,30 @@ int main()
             }
 
         switch (choice)
-        {
-            case 1:
-                displayMethods(methods, 3);
-                break;
+{
+    case 1:
+        generateRecipe(methods, 3);
+        break;
 
-            case 2:
-                generateRecipe(methods, 3);
-                break;
+    case 2:
+        coffeeCalculator();
+        break;
 
-            case 3:
-                coffeeCalculator();
-                break;
+    case 3:
+        adjustTaste();
+        break;
 
-            case 4:
-                printf("\nBrewing History - Coming Soon!\n");
-                break;
+    case 4:
+        printf("\nBrewing History - Coming Soon!\n");
+        break;
 
-            case 5:
-                printf("\nThank you for using CaffTech!\n");
-                break;
+    case 5:
+        printf("\nThank you for using CaffTech!\n");
+        break;
 
-            default:
-                printf("\nInvalid choice! Please select 1 to 5.\n");
-        }
+    default:
+        printf("\nInvalid choice! Please select 1 to 5.\n");
+}
 
     } while (choice != 5);
 
@@ -277,6 +278,70 @@ void coffeeCalculator()
 
     } while (choice != 3);
 }
+
+void adjustTaste()
+{
+    int choice;
+
+    do
+    {
+        printf("\n========== TASTE ADJUSTMENT ==========\n");
+
+        printf("1. Too Bitter\n");
+        printf("2. Too Sour\n");
+        printf("3. Too Weak\n");
+        printf("4. Too Strong\n");
+        printf("5. Balanced\n");
+        printf("6. Return to Main Menu\n");
+
+        printf("======================================\n");
+
+        printf("\nHow did your coffee taste? ");
+        
+        if (scanf("%d", &choice) != 1)
+        {
+            printf("\nInvalid input! Please enter a number.\n");
+            return;
+        }
+
+        switch (choice)
+        {
+            case 1:
+                printf("\nRecommendation:\n");
+                printf("Try a coarser grind or slightly lower the brewing temperature.\n");
+                break;
+
+            case 2:
+                printf("\nRecommendation:\n");
+                printf("Try a finer grind or slightly increase the brewing temperature.\n");
+                break;
+
+            case 3:
+                printf("\nRecommendation:\n");
+                printf("Increase the coffee quantity or reduce the water quantity.\n");
+                break;
+
+            case 4:
+                printf("\nRecommendation:\n");
+                printf("Increase the water quantity or reduce the coffee quantity.\n");
+                break;
+
+            case 5:
+                printf("\nGreat! Your coffee is balanced.\n");
+                printf("Keep using your current brewing recipe!\n");
+                break;
+
+            case 6:
+                printf("\nReturning to Main Menu...\n");
+                break;
+
+            default:
+                printf("\nInvalid choice! Please select 1 to 6.\n");
+        }
+
+    } while (choice != 6);
+}
+
 
 
 
